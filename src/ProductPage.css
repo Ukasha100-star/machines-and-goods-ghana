@@ -1,0 +1,62 @@
+/* Style for the view toggle buttons */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.view-toggle button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Container for products in grid view */
+.product-container.grid-view {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Container for products in list view */
+.product-container.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Style for each product card */
+.product-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Style for product images */
+.product-image {
+  max-width: 100%;  /* Ensure the image fits within the container */
+  height: auto;  /* Maintain the aspect ratio */
+  border-radius: 8px;  /* Optional: Add rounded corners */
+  margin-bottom: 15px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);  /* Slightly enlarge the card on hover */
+}
+
+/* Responsive grid layout */
+@media (max-width: 768px) {
+  .product-container.grid-view {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-container.grid-view {
+    grid-template-columns: 1fr;  /* 1 column on mobile */
+  }
+}

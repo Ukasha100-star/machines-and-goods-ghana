@@ -1,0 +1,77 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    color: white;
+    padding: 6px 10px; /* Reduced padding for a thinner appearance */
+  }
+  
+  .header__logo h2 {
+    color: #FF9900; /* Gold color, adjust as per your brand color */
+    margin: 0;
+    font-size: 18px; /* Reduced font size */
+  }
+  
+  .header__search {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 10px; /* Adjusted margin for better alignment */
+  }
+  
+  .header__searchCategory {
+    padding: 6px;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    background: white;
+    color: black;
+    font-size: 14px; /* Smaller font size for the dropdown */
+  }
+  
+  .header__searchInput {
+    height: 24px; /* Adjust height for a compact search bar */
+    padding: 6px;
+    border: none;
+    width: 100%;
+  }
+  
+  .header__searchButton {
+    background-color: #febd69;
+    border: none;
+    padding: 6px 12px; /* Reduced padding */
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size for button */
+  }
+  
+  .header__nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__option {
+    padding: 4px 10px; /* Reduced padding */
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 14px; /* Smaller font size */
+  }
+  
+  .header__option strong {
+    display: block; /* Makes text appear on a new line */
+  }
+  
+  .header__optionBasket {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px; /* Reduced padding for basket icon */
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .header__basketCount {
+    margin-left: 6px;
+    font-weight: bold;
+    font-size: 14px; /* Smaller font size */
+  }
+  

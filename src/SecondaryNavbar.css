@@ -1,0 +1,18 @@
+.secondary-navbar {
+    display: flex;
+    justify-content: center;  /* Centers the links */
+    background-color: #fff;  /* White background */
+    padding: 10px 0;  /* Top and bottom padding */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Adds a subtle shadow for depth */
+  }
+  
+  .secondary-navbar a {
+    margin: 0 15px;  /* Spacing between links */
+    color: #007185;  /* Color similar to Amazon's link color */
+    text-decoration: none;  /* Removes underline from links */
+  }
+  
+  .secondary-navbar a:hover {
+    text-decoration: underline;  /* Underline on hover for better user experience */
+  }
+  

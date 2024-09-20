@@ -1,0 +1,25 @@
+/* ButtonStyles.css */
+
+/* Styling for the 'View Our Products' button */
+.view-products-btn {
+    padding: 15px 30px;
+    background-color: #007185;  /* Amazon-like blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .view-products-btn:hover {
+    background-color: #005f69;  /* Darker blue on hover */
+    transform: scale(1.05);  /* Slightly enlarge the button */
+  }
+  
+  .view-products-btn:active {
+    background-color: #004f58;  /* Even darker blue when pressed */
+    transform: scale(1);  /* Reset the button size when clicked */
+  }
+  

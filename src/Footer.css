@@ -1,0 +1,28 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #232f3e;
+    color: white;
+  }
+  
+  .footer__section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer__section p, .footer__section input, .footer__section button {
+    margin-bottom: 5px;
+  }
+  
+  .footer__section input {
+    padding: 8px;
+    margin-right: 5px;
+  }
+  
+  .footer__section button {
+    padding: 8px;
+    background-color: #febd69;
+    border: none;
+    cursor: pointer;
+  }
+  
