@@ -12,8 +12,10 @@
     "react-dom": "^18.3.1",
     "react-dropzone": "^14.2.3",
     "react-router-dom": "^6.26.2",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.30.2",
     "resolve-url-loader": "^5.0.0",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -42,5 +44,9 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
+  "resolutions": {
+    "postcss": "^8.4.47",
+    "resolve-url-loader": "^5.0.0"
   }
 }

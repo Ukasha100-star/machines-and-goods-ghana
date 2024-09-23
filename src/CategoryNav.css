@@ -1,0 +1,32 @@
+.category-nav {
+    padding: 20px;
+  }
+  
+  .category-nav h3 {
+    margin-bottom: 10px;
+  }
+  
+  .category-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category-nav button {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f8f8f8;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .subcategory-list {
+    margin-left: 20px;
+  }
+  
+  .subcategory-list button {
+    background-color: #e8e8e8;
+  }
+  

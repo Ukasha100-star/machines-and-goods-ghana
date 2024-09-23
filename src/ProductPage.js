@@ -1,49 +1,95 @@
 import React, { useState } from 'react';
-import './ProductPage.css';  // Import your CSS for styling
+import { Link } from 'react-router-dom';
+import CategoryNav from './CategoryNav';
+import './ProductPage.css';
 
-function ProductPage() {
-  const [view, setView] = useState('grid');  // Toggle between grid and list views
+function ProductPage({ productsData, categoriesData }) {
+  const [categoryFilter, setCategoryFilter] = useState('');
+  const [subcategoryFilter, setSubcategoryFilter] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); // New state for search term
 
-  const productsData = [
-    {
-      id: 1,
-      name: 'Tractor',
-      price: 5000,
-      image: 'https://via.placeholder.com/150',  // Placeholder image URL
-    },
-    {
-      id: 2,
-      name: 'Irrigation System',
-      price: 2000,
-      image: 'https://via.placeholder.com/150',  // Placeholder image URL
-    },
-    {
-      id: 3,
-      name: 'Combine Harvester',
-      price: 8000,
-      image: 'https://via.placeholder.com/150',  // Placeholder image URL
-    },
-    // Add more products with real image URLs as needed
-  ];
+  const handleCategorySelect = (category) => {
+    setCategoryFilter(category);
+    setSubcategoryFilter('');
+  };
+
+  const handleSubcategorySelect = (subcategory) => {
+    setSubcategoryFilter(subcategory);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value.toLowerCase());
+  };
+
+  // Get available subcategories for the selected category
+  const subcategories = categoryFilter
+    ? categoriesData.find((cat) => cat.name === categoryFilter).subcategories
+    : [];
+
+  // Filter products by category, subcategory, and search term
+  const filteredProducts = productsData.filter((product) => {
+    const categoryCondition = !categoryFilter || product.category === categoryFilter;
+    const subcategoryCondition = !subcategoryFilter || product.subcategory === subcategoryFilter;
+    const searchCondition =
+      product.name.toLowerCase().includes(searchTerm) ||
+      product.description.toLowerCase().includes(searchTerm) ||
+      product.category.toLowerCase().includes(searchTerm);
+
+    return categoryCondition && subcategoryCondition && searchCondition;
+  });
 
   return (
-    <div>
-      {/* Toggle between Grid and List Views */}
-      <div className="view-toggle">
-        <button onClick={() => setView('grid')}>Grid View</button>
-        <button onClick={() => setView('list')}>List View</button>
+    <div className="product-page">
+      <div className="sidebar">
+        <CategoryNav 
+          categories={categoriesData} 
+          onSelectCategory={handleCategorySelect} 
+          onSelectSubcategory={handleSubcategorySelect} 
+        />
       </div>
 
-      {/* Display Products */}
-      <div className={`product-container ${view === 'grid' ? 'grid-view' : 'list-view'}`}>
-        {productsData.map(product => (
-          <div key={product.id} className="product-card">
-            {/* Render the product image */}
-            <img src={product.image} alt={product.name} className="product-image" />
-            <h3>{product.name}</h3>
-            <p>Price: ${product.price}</p>
+      <div className="main-content">
+        {/* Search Bar */}
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="search-bar"
+        />
+
+        {/* Subcategory Filter */}
+        {categoryFilter && (
+          <div className="subcategory-filter">
+            <h4>Subcategories for {categoryFilter}:</h4>
+            {subcategories.map((subcategory) => (
+              <button
+                key={subcategory}
+                onClick={() => handleSubcategorySelect(subcategory)}
+                className={subcategoryFilter === subcategory ? 'active' : ''}
+              >
+                {subcategory}
+              </button>
+            ))}
           </div>
-        ))}
+        )}
+
+        {/* Product Listings */}
+        <div className="product-container">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+              <div key={product.id} className="product-card">
+                <Link to={`/product/${product.id}`}>
+                  <img src={product.images[0]} alt={product.name} className="product-image" />
+                  <h3>{product.name}</h3>
+                </Link>
+                <p>Price: ${product.price}</p>
+              </div>
+            ))
+          ) : (
+            <p>No products found.</p>
+          )}
+        </div>
       </div>
     </div>
   );
