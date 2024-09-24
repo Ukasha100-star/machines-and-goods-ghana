@@ -184,3 +184,19 @@
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+.sort-options {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.sort-options label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.sort-options select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}

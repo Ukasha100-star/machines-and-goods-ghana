@@ -1,14 +1,16 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import ProductPage from './ProductPage';
+import ProductDetail from './ProductDetail';
+import CategoryPage from './CategoryPage'; // Import the new component
 import Header from "./Header";
 import Navbar from "./Navbar";
 import SecondaryNavbar from "./SecondaryNavbar";
 import Footer from "./Footer";
-import ProductPage from "./ProductPage";
-import ProductDetail from './ProductDetail';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-// Define the categories data
+// Updated categories data
 const categoriesData = [
   {
     name: "Machinery",
@@ -22,6 +24,18 @@ const categoriesData = [
     name: "Engines & Power Systems",
     subcategories: ["Petrol Engines", "Diesel Engines", "Generators", "Solar Power Systems", "Pumps"]
   },
+  {
+    name: "Electronics",
+    subcategories: ["Mobiles", "Computers", "TVs", "Wearable Technology", "Gaming & Consoles"]
+  },
+  {
+    name: "Tools & Equipment",
+    subcategories: ["Hand Tools", "Power Tools", "Measuring Tools", "Workshop Equipment"]
+  },
+  {
+    name: "Building Materials",
+    subcategories: ["Cement", "Bricks & Blocks", "Plumbing Materials", "Electrical Supplies"]
+  }
   // Add more categories as needed...
 ];
 
@@ -51,18 +65,17 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Header />
-        <Navbar />
+        <Header categoriesData={categoriesData} />
+        <Navbar categoriesData={categoriesData} />
         <SecondaryNavbar />
-        
+
         <Routes>
-          <Route 
-            path="/products" 
-            element={<ProductPage productsData={productsData} categoriesData={categoriesData} />} 
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ProductPage productsData={productsData} categoriesData={categoriesData} />} />
           <Route path="/product/:productId" element={<ProductDetail productsData={productsData} />} />
+          <Route path="/category/:categoryName" element={<CategoryPage categoriesData={categoriesData} />} /> {/* Route for category pages */}
         </Routes>
-        
+
         <Footer />
       </div>
     </Router>

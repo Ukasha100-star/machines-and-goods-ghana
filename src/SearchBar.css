@@ -1,0 +1,72 @@
+/* General setup for the search bar area */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Centers the search bar */
+  background-color: #fff;  /* White background for clarity */
+  border-radius: 4px;  /* Rounded corners */
+  max-width: 30%;  /* Reduce the width to give space to other elements */
+  flex-grow: 1;  /* Allows the search bar to expand but controlled */
+  margin: 0 10px;  /* Moderate spacing on both sides */
+}
+
+/* Styling for the dropdown in the search bar */
+.search-category-select {
+  border: none;
+  background: transparent;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 4px 0 0 4px;  /* Rounded corners on the left side */
+  min-width: 100px;  /* Ensures dropdown is not too narrow */
+}
+
+/* Styling for the input field within the search bar */
+.search-input {
+  flex-grow: 1;  /* Allows the input to fill the space appropriately */
+  border: none;
+  padding: 8px 10px;
+  height: 40px;  /* Ensures the input is not too large or small */
+}
+
+/* Styling for the search button */
+.search-button {
+  background-color: #febd69;  /* Amazon-like button color */
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;  /* Rounded corners on the right side */
+  color: black;  /* Ensures text is visible */
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .search-bar {
+    max-width: 100%;  /* Allows the search bar to fit small screens */
+    margin: 0 5px;  /* Less margin on smaller screens */
+  }
+
+  .search-category-select, .search-input, .search-button {
+    padding: 8px 6px;  /* Adjust padding for compact layout */
+  }
+}
+/* SearchBar.css */
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 500px;  /* Reducing maximum width */
+  flex-grow: 1;  /* Still allowed to grow but within reason */
+  margin: 0 20px;  /* Ensures some spacing from logo and utilities */
+}
+
+.search-input {
+  flex-grow: 1;  /* Takes up remaining space within the search bar */
+  border: none;
+  padding: 8px;
+  outline: none;  /* Clean look */
+}
+
+.search-category-select, .search-button {
+  flex-shrink: 0;  /* Prevent these elements from shrinking */
+}
+
+/* Additional styles can go here */

@@ -1,77 +1,62 @@
 .header {
-    display: flex;
-    align-items: center;
-    background-color: #131921;
-    color: white;
-    padding: 6px 10px; /* Reduced padding for a thinner appearance */
-  }
-  
-  .header__logo h2 {
-    color: #FF9900; /* Gold color, adjust as per your brand color */
-    margin: 0;
-    font-size: 18px; /* Reduced font size */
-  }
-  
-  .header__search {
-    display: flex;
-    flex-grow: 1;
-    margin-left: 10px; /* Adjusted margin for better alignment */
-  }
-  
-  .header__searchCategory {
-    padding: 6px;
-    border-radius: 4px 0 0 4px;
-    border: none;
-    background: white;
-    color: black;
-    font-size: 14px; /* Smaller font size for the dropdown */
-  }
-  
-  .header__searchInput {
-    height: 24px; /* Adjust height for a compact search bar */
-    padding: 6px;
-    border: none;
-    width: 100%;
-  }
-  
-  .header__searchButton {
-    background-color: #febd69;
-    border: none;
-    padding: 6px 12px; /* Reduced padding */
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    font-size: 14px; /* Smaller font size for button */
-  }
-  
-  .header__nav {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header__option {
-    padding: 4px 10px; /* Reduced padding */
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    font-size: 14px; /* Smaller font size */
-  }
-  
-  .header__option strong {
-    display: block; /* Makes text appear on a new line */
-  }
-  
-  .header__optionBasket {
-    display: flex;
-    align-items: center;
-    padding: 4px 10px; /* Reduced padding for basket icon */
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-  }
-  
-  .header__basketCount {
-    margin-left: 6px;
-    font-weight: bold;
-    font-size: 14px; /* Smaller font size */
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures proper spacing between elements */
+  padding: 10px 20px; /* Sufficient padding but not too much */
+  background-color: #131921; /* Dark background for contrast */
+  color: white;
+}
+
+.logo {
+  cursor: pointer;
+  color: #FF9900; /* Amazon’s signature orange for branding */
+  font-size: 24px; /* Makes the logo stand out more */
+  font-weight: bold;
+  text-decoration: none; /* Removes underline from clickable logo */
+}
+
+.search-bar {
+  display: flex;
+  flex-grow: 1; /* Allows the search bar to fill available space appropriately */
+  max-width: 600px; /* Restricts the search bar's width to prevent it from taking too much space */
+  margin: 0 10px; /* Adds margin to prevent touching other elements */
+}
+
+.search-category-select {
+  border: none;
+  background-color: white;
+  padding: 8px 12px;
+  margin-right: -1px; /* Closes gap to next element */
+  border-radius: 4px 0 0 4px; /* Rounded corners on the left */
+}
+
+.search-input {
+  flex-grow: 1; /* Allows input to expand within the remaining space */
+  border: none;
+  padding: 8px;
+  outline: none; /* Removes the default focus outline */
+}
+
+.search-button {
+  background-color: #febd69;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 0 4px 4px 0; /* Rounded corners on the right */
+  cursor: pointer;
+  color: black; /* Ensures visibility */
+}
+
+.header__utilities {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Aligns utilities to the right */
+  flex-grow: 0; /* Prevents utilities section from growing */
+  margin-left: auto; /* Pushes utilities to the right */
+}
+
+.header__account,
+.header__cart {
+  margin-left: 20px; /* Space between icons */
+  cursor: pointer;
+  color: white; /* Maintains visibility against the dark background */
+}

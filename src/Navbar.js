@@ -1,16 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';  // Use NavLink for navigation
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-function Navbar() {
+function Navbar({ categoriesData }) {
   return (
     <nav className="navbar">
-      <NavLink to="/" className="navigation-btn">
-        Home
-      </NavLink>
-      <NavLink to="/products" className="navigation-btn">
-        Products
-      </NavLink>
-      {/* Add more links here if needed */}
+      {categoriesData.map((category, index) => (
+        <Link key={index} to={`/category/${category.name}`} className="nav__link">
+          {category.name}
+        </Link>
+      ))}
     </nav>
   );
 }
