@@ -1,0 +1,117 @@
+/* Basic Header Styling */
+.new-header {
+    background-color: #131921; /* Amazon-like dark background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure items are evenly spaced */
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Container Styling to Center Content */
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* You can adjust the max width as needed */
+    margin: 0 auto; /* Centers the container */
+  }
+  
+  /* Logo Styling */
+  .header-logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .header-logo span {
+    color: #ff9900; /* Amazon-style orange */
+  }
+  
+  /* Search Bar Styling */
+  .header-search {
+    display: flex;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 20px; /* Adds space between logo and search */
+  }
+  
+  .search-dropdown {
+    background-color: #f3f3f3;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 6px;
+  }
+  
+  .category-dropdown {
+    padding: 5px;
+    border: none;
+    background-color: #f3f3f3;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  .search-button {
+    background-color: #febd69;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  /* Sign-In Section */
+  .header-option {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-left: 20px;
+  }
+  
+  .header-option-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Cart Section */
+  .header-option-cart {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-left: 20px;
+  }
+  
+  .cart-count {
+    background-color: #f08804;
+    padding: 4px 8px;
+    border-radius: 50%;
+    margin-left: 5px;
+    font-weight: bold;
+  }
+  .category-dropdown {
+    padding: 5px;
+    border: none;
+    background-color: #f3f3f3;
+    cursor: pointer;
+  }
+  
+  .category-dropdown:hover, .category-dropdown:focus {
+    background-color: #e2e2e2; /* Lighter grey for hover */
+  }
+  
+  /* Adjusting the hover color for options inside the dropdown */
+  .category-dropdown option:hover {
+    background-color: #ddd; /* Even lighter grey for option hover */
+  }
+  

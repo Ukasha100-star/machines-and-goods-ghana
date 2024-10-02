@@ -1,72 +1,59 @@
-/* General setup for the search bar area */
-.search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;  /* Centers the search bar */
-  background-color: #fff;  /* White background for clarity */
-  border-radius: 4px;  /* Rounded corners */
-  max-width: 30%;  /* Reduce the width to give space to other elements */
-  flex-grow: 1;  /* Allows the search bar to expand but controlled */
-  margin: 0 10px;  /* Moderate spacing on both sides */
+/* Container for the search results */
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;  /* Center the product cards */
+    margin: 20px 0;
 }
 
-/* Styling for the dropdown in the search bar */
-.search-category-select {
-  border: none;
-  background: transparent;
-  padding: 8px 10px;
-  cursor: pointer;
-  border-radius: 4px 0 0 4px;  /* Rounded corners on the left side */
-  min-width: 100px;  /* Ensures dropdown is not too narrow */
+/* Individual product card */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Styling for the input field within the search bar */
-.search-input {
-  flex-grow: 1;  /* Allows the input to fill the space appropriately */
-  border: none;
-  padding: 8px 10px;
-  height: 40px;  /* Ensures the input is not too large or small */
+.product-card:hover {
+    transform: translateY(-10px);
 }
 
-/* Styling for the search button */
-.search-button {
-  background-color: #febd69;  /* Amazon-like button color */
-  border: none;
-  padding: 8px 20px;
-  cursor: pointer;
-  border-radius: 0 4px 4px 0;  /* Rounded corners on the right side */
-  color: black;  /* Ensures text is visible */
+/* Image of the product */
+.product-image {
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain;  /* Make sure the image fits well within the card */
+    margin-bottom: 10px;
 }
 
-/* Responsive behavior for smaller screens */
-@media (max-width: 768px) {
-  .search-bar {
-    max-width: 100%;  /* Allows the search bar to fit small screens */
-    margin: 0 5px;  /* Less margin on smaller screens */
-  }
-
-  .search-category-select, .search-input, .search-button {
-    padding: 8px 6px;  /* Adjust padding for compact layout */
-  }
-}
-/* SearchBar.css */
-.search-bar {
-  display: flex;
-  align-items: center;
-  max-width: 500px;  /* Reducing maximum width */
-  flex-grow: 1;  /* Still allowed to grow but within reason */
-  margin: 0 20px;  /* Ensures some spacing from logo and utilities */
+/* Information about the product */
+.product-info {
+    margin-top: 10px;
 }
 
-.search-input {
-  flex-grow: 1;  /* Takes up remaining space within the search bar */
-  border: none;
-  padding: 8px;
-  outline: none;  /* Clean look */
+.product-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.search-category-select, .search-button {
-  flex-shrink: 0;  /* Prevent these elements from shrinking */
+.product-info p {
+    font-size: 16px;
+    color: #666;
 }
 
-/* Additional styles can go here */
+.product-info strong {
+    font-weight: bold;
+}
+
+/* Message when no products are found */
+.no-results-message {
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    margin-top: 50px;
+}

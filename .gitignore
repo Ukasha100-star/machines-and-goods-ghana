@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignore firebase configuration
+src/firebase.js
+
+# Ignore environment variables file
+.env
